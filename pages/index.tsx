@@ -1,30 +1,37 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import moment from "moment";
 import { Card } from "../components/Card";
 
 const Home: NextPage = () => {
-  const url =
-    "https://api.apify.com/v2/key-value-stores/KUlj8EGfDGHiB0gU1/records/LATEST?disableRedirect=true";
-
   const [infected, setInfected] = useState<number | null>(null);
   const [deceased, setDeceased] = useState<number | null>(null);
   const [recovered, setRecovered] = useState<number | null>(null);
   const [tested, setTested] = useState<number | null>(null);
   const [updated, setUpdated] = useState<string | null>(null);
 
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      const { infected, deceased, recovered, tested, lastUpdatedAtSource } =
-        data;
-      setUpdated(lastUpdatedAtSource);
-      setInfected(infected);
-      setDeceased(deceased);
-      setRecovered(recovered);
-      setTested(tested);
-    })
-    .catch((error) => console.log(error));
+  const fetchData = () => {
+    const url =
+      "https://api.apify.com/v2/key-value-stores/KUlj8EGfDGHiB0gU1/records/LATEST?disableRedirect=true";
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        const { infected, deceased, recovered, tested, lastUpdatedAtSource } =
+          data;
+        setUpdated(lastUpdatedAtSource);
+        setInfected(infected);
+        setDeceased(deceased);
+        setRecovered(recovered);
+        setTested(tested);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center text-white bg-gray-900 min-h-screen py-2">
