@@ -28,6 +28,14 @@ const Home: NextPage = () => {
       .catch((error) => console.log(error));
   };
 
+  const formatDate = (date: string) => {
+    let hour = parseInt(date[12]);
+    hour -= 3;
+    const arr = date.split("T");
+    // this manually changes the timezone
+    return arr[0] + "T" + "1" + hour.toString() + ":00:00.000Z";
+  };
+
   useEffect(() => {
     fetchData();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -43,7 +51,9 @@ const Home: NextPage = () => {
           <Card name="tested" value={tested} />
         </div>
         {updated !== null ? (
-          <p className="text-white">updated {moment(updated).fromNow()}</p>
+          <p className="text-white">
+            updated {moment(formatDate(updated)).fromNow()}
+          </p>
         ) : (
           <p className="text-opacity-30 text-white">loading</p>
         )}
