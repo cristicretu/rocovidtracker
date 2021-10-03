@@ -25,7 +25,7 @@ export const Card: React.FC<CardProps> = ({ name, value, newCases }) => {
       {value !== null ? (
         <CountUp end={value} duration={3.5} separator=" " />
       ) : (
-        <p className="text-opacity-30 text-white">loading</p>
+        <div className="animate-pulse h-4 bg-gray-700 rounded w-5/6"></div>
       )}
     </div>
   );
