@@ -71,7 +71,12 @@ const Home: NextPage = () => {
         {updated !== null ? (
           <p className="">updated {moment(formatDate(updated)).fromNow()}</p>
         ) : (
-          <p className="text-opacity-30 ">loading</p>
+          // <p className="text-opacity-30 ">loading</p>
+          <div className="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         )}
       </div>
     </Container>
