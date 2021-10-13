@@ -17,7 +17,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: white;
+  background-color: black;
   animation: flashing 1.4s infinite linear;
   margin: 0 4px;
   display: inline-block;
