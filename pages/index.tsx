@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import moment from "moment";
 import { Card } from "components/Card";
 import Container from "components/Container";
 import useSWR from "swr";
@@ -21,7 +20,14 @@ const Home: NextPage = () => {
   }, []);
 
   if (error) return <Container>error</Container>;
-  if (!data) return <Container>No data could be fetched, try again</Container>;
+  if (!data)
+    return (
+      <Container>
+        <div className="flex flex-col items-center justify-center py-12">
+          Loading...
+        </div>
+      </Container>
+    );
   const newData = data.data["data"].pop();
 
   const newCases = newData["Cazuri"];

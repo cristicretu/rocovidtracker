@@ -8,7 +8,6 @@
   "dependencies": {
     "clsx": "^1.1.1",
     "eslint-config-prettier": "^8.3.0",
-    "moment": "^2.29.1",
     "next": "latest",
     "next-themes": "^0.0.15",
     "react": "^17.0.2",
