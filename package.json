@@ -6,7 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
+    "@radix-ui/react-dialog": "^0.1.5",
+    "@radix-ui/react-icons": "^1.0.3",
     "clsx": "^1.1.1",
+    "date-fns": "^2.28.0",
     "eslint-config-prettier": "^8.3.0",
     "next": "latest",
     "next-themes": "^0.0.15",
