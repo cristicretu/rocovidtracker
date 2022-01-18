@@ -23,23 +23,9 @@ export default function Home(props) {
         )
       }
     })
-    .splice(data.length - 10, data.length - 1)
+    .splice(data.length - 200, data.length - 1)
 
   const [date, setDate] = useState(all[all.length - 1].id)
-
-  // const newCases = formattedData['Cazuri']
-  // const newDeaths = formattedData['Morti pe zi']
-  // const newRecovered = formattedData['Vindecati pe zi']
-  // const newTests = formattedData['Nr de teste pe zi']
-
-  // const allCases = formattedData['Total']
-  // const allDeaths = formattedData['Morti']
-  // const allRecovered = formattedData['Vindecati']
-  // const allTest = formattedData['Nr de teste']
-
-  // const ATI = formattedData['Terapie intensiva']
-
-  // const date = formattedData['Data'] // yyyy-mm-dd
 
   return (
     <Container>
