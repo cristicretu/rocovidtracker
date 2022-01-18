@@ -1,5 +1,5 @@
-# Covid-19 Tracker for Romania
+![image](/public/static/header.png)
 
-this is a minimal tracker built using typescript & react & tailwind.
+<hr>
 
-![preview](https://cdn.discordapp.com/attachments/797485737272541250/892838514931154964/unknown.png)
+<p align="center">Minimal Covid-19 Tracker for Romania.</p>
