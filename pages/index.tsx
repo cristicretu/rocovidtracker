@@ -58,7 +58,7 @@ export default function Home(props) {
           Covid-19 Cases in Romania
         </h1>
         <p className="mb-4">
-          Use the above button to filter through days, or press CMD + K.
+          Use the button above to filter through days or press CMD + K.
         </p>
         <div className="grid grid-cols-2 gap-2">
           <Card
